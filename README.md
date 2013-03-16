@@ -33,7 +33,7 @@ Hazel Refs
 ;; @r2 => 88
 ```
 
-`dostransaction` can roll-back
+`do-transaction` can roll-back
 
 ```clj
 (def  r1 (hazel-ref hazelcast "my-ref1" 1))

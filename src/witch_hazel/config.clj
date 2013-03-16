@@ -14,6 +14,8 @@
           (.addMember tcp-config peer))))
     config))
 
-(defn make-hazelcast [& {:keys [peers]}]
+(defn make-hazelcast
+  "Make a new HazelCast instance"
+  [& {:keys [peers]}]
   (Hazelcast/newHazelcastInstance (make-hazelcast-config peers)))
 

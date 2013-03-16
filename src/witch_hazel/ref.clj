@@ -1,4 +1,4 @@
-(ns witch-hazel.hazel-ref
+(ns witch-hazel.ref
   (:import (com.hazelcast.core Hazelcast HazelcastInstance
                                EntryListener IMap Transaction)
            (com.hazelcast.config XmlConfigBuilder)
