@@ -1,4 +1,4 @@
-(ns hazer.config
+(ns witch-hazel.config
   (:import (com.hazelcast.core Hazelcast HazelcastInstance)
            (com.hazelcast.config XmlConfigBuilder)))
 

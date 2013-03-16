@@ -1,5 +1,5 @@
-(ns hazer.memoize
-  #_(:require [hazer.hazer-ref :as cache]))
+(ns witch-hazel.memoize
+  #_(:require [witch-hazel.hazer-ref :as cache]))
 
 
 #_(defn memoize [hazelcast name f]
