@@ -18,13 +18,14 @@
     (HazelRef. hazelcast m k)))
 
 (defn- assert-in-transaction [^HazelRef hazel-ref*]
-  (let [hazelcast (.hazelcast hazel-ref*)
-        ^int txn-status (-> hazelcast .getTransaction .getStatus)]
+  (let [hazelcast ^HazelcastInstance (.hazelcast hazel-ref*)
+        txn ^Transaction (.getTransaction hazelcast)
+        txn-status (.getStatus txn)]
     (assert (not (contains? #{Transaction/TXN_STATUS_NO_TXN Transaction/TXN_STATUS_UNKNOWN} txn-status))
             "halter must be called from within a hazelcast transaction.")))
 
 (defn- set-hazel-ref-internal-value [^HazelRef hazel-ref* x]
-  (.put (.hazel-map hazel-ref*) (.k hazel-ref*) x))
+  (.put ^IMap (.hazel-map hazel-ref*) (.k hazel-ref*) x))
 
 (defn hazel-ref-set
   "TODO - add great doc string"
