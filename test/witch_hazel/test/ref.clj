@@ -10,8 +10,7 @@
   (is (= [] (remove (comp :doc meta) (vals (ns-publics 'witch-hazel.config)))))
   (is (= [] (remove (comp :doc meta) (vals (ns-publics 'witch-hazel.ref)))))
   (is (= [] (remove (comp :doc meta) (vals (ns-publics 'witch-hazel.cache)))))
-  ;;;(is (= [] (remove (comp :doc meta) (vals (ns-publics 'witch-hazel.memoize)))))
-  )
+  (is (= [] (remove (comp :doc meta) (vals (ns-publics 'witch-hazel.memoize))))))
 
 (deftest test-basic-hazel-ref
   (let [r1 (hazel-ref hazelcast "my-ref" 1)

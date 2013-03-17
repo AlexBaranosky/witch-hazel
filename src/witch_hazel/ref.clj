@@ -22,7 +22,7 @@
         txn ^Transaction (.getTransaction hazelcast)
         txn-status (.getStatus txn)]
     (assert (not (contains? #{Transaction/TXN_STATUS_NO_TXN Transaction/TXN_STATUS_UNKNOWN} txn-status))
-            "halter must be called from within a hazelcast transaction.")))
+            "Must be called from within a hazelcast transaction.")))
 
 (defn- set-hazel-ref-internal-value [^HazelRef hazel-ref* x]
   (.put ^IMap (.hazel-map hazel-ref*) (.k hazel-ref*) x))
